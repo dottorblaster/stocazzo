@@ -1,0 +1,22 @@
+{
+  "name": "stocazzo-as-a-service",
+  "version": "0.0.1",
+  "description": "Yet Another Cloud Antani",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dottorblaster/scaas.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Alessio \"Blaster\" Biancalana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dottorblaster/scaas/issues"
+  },
+  "homepage": "https://github.com/dottorblaster/scaas"
+}
