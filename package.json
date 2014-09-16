@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/dottorblaster/scaas/issues"
   },
-  "homepage": "https://github.com/dottorblaster/scaas"
+  "homepage": "https://github.com/dottorblaster/scaas",
+  "dependencies": {
+    "hapi": "^6.8.1"
+  }
 }
