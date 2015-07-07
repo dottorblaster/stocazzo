@@ -44,5 +44,5 @@ server.route({
 });
 
 server.start(function () {
-	console.log('A stocazzo provider is running at: ', server.info.uri);
+	console.log('A stocazzo provider is running at:', server.info.uri);
 });
