@@ -1,6 +1,6 @@
 var config = {
 	sc: 'stocazzo',
-	port: 3000
+	port: 80
 };
 
 module.exports = config;
