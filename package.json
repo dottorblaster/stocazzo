@@ -4,7 +4,7 @@
   "description": "Yet Another Cloud Antani",
   "main": "app.js",
   "scripts": {
-    "test": "node app"
+    "test": "./node_modules/lab/bin/lab -c"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/dottorblaster/scaas",
   "dependencies": {
-    "hapi": "^6.8.1"
+    "hapi": "^6.8.1",
+    "lab": "*"
   }
 }
