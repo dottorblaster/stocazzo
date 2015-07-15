@@ -19,7 +19,6 @@ server.route({
 	}
 });
 
-
 server.route({
 	method: 'GET',
 	path: '/caps',
