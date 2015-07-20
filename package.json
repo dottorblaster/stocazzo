@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/dottorblaster/scaas",
   "dependencies": {
-    "hapi": "^6.8.1",
-    "lab": "*"
+    "code": "^1.4.1",
+    "hapi": "^8.8.0",
+    "lab": "^5.13.0"
   }
 }
