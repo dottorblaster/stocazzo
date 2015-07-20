@@ -1,7 +1,9 @@
 var Hapi = require('hapi'),
 	config = require('./config.js'),
-	server = new Hapi.Server(config.port),
+	server = new Hapi.Server(),
 	sc = config.sc;
+
+server.connection({port: config.port});
 
 server.route({
 	method: 'GET',
@@ -46,3 +48,5 @@ server.route({
 server.start(function () {
 	console.log('A stocazzo provider is running at:', server.info.uri);
 });
+
+exports.server = server;
