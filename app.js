@@ -9,7 +9,7 @@ server.route({
 	method: 'GET',
 	path: '/',
 	handler: function(request, reply){
-		return reply(JSON.stringify({response: "prrrr giorgio"})).type('application/json');
+		return reply(JSON.stringify({response: sc})).type('application/json');
 	}
 });
 
