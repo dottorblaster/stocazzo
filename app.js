@@ -39,6 +39,17 @@ server.route({
 	}
 });
 
+server.route({
+	method: 'GET',
+	path: '/ascii',
+	handler: function(request, reply){
+		var r = {response: "8====D"};
+
+		r = Utils.requestFormatter(request, r);
+		return reply(JSON.stringify(r)).type('application/json');
+	}
+});
+
 server.start(function () {
 	console.log('A stocazzo provider is running at:', server.info.uri);
 });
