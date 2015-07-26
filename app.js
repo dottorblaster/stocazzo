@@ -32,7 +32,10 @@ server.route({
 	method: 'GET',
 	path: '/camel',
 	handler: function(request, reply){
-		return reply(JSON.stringify({response: 'StoCazzo'})).type('application/json');
+		var r = {response: "StoCazzo"};
+
+		r = Utils.requestFormatter(request, r);
+		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
 
