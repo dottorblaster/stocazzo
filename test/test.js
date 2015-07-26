@@ -17,15 +17,16 @@ lab.experiment("Testing di stocazzo", function() {
 		});
 	});
 
-	lab.test("GET /chi", function(done) {
+	lab.test("GET / with request body", function(done) {
 		var options = {
 			method: 'GET',
-			url: '/chi'
+			url: '/',
+			payload: {query: "chi è?"}
 		};
 
 		server.inject(options, function(response) {
 			Code.expect(response.statusCode).to.equal(200);
-			Code.expect(JSON.parse(response.result).query).to.equal('chi?');
+			Code.expect(JSON.parse(response.result).query).to.equal('chi è?');
 			Code.expect(JSON.parse(response.result).response).to.equal('stocazzo');
 			done();
 		});
@@ -39,20 +40,6 @@ lab.experiment("Testing di stocazzo", function() {
 
 		server.inject(options, function(response) {
 			Code.expect(response.statusCode).to.equal(200);
-			Code.expect(JSON.parse(response.result).response).to.equal('STOCAZZO');
-			done();
-		});
-	});
-
-	lab.test("GET /caps/chi", function(done) {
-		var options = {
-			method: 'GET',
-			url: '/caps/chi'
-		};
-
-		server.inject(options, function(response) {
-			Code.expect(response.statusCode).to.equal(200);
-			Code.expect(JSON.parse(response.result).query).to.equal('chi?');
 			Code.expect(JSON.parse(response.result).response).to.equal('STOCAZZO');
 			done();
 		});
