@@ -15,17 +15,10 @@ lab.experiment("Testing di stocazzo", function() {
 			Code.expect(JSON.parse(response.result).response).to.equal('stocazzo');
 			done();
 		});
-	});
 
-	lab.test("GET /chi", function(done) {
-		var options = {
-			method: 'GET',
-			url: '/chi'
-		};
-
+		// here goes the fail
 		server.inject(options, function(response) {
 			Code.expect(response.statusCode).to.equal(200);
-			Code.expect(JSON.parse(response.result).query).to.equal('chi?');
 			Code.expect(JSON.parse(response.result).response).to.equal('stocazzo');
 			done();
 		});
@@ -39,20 +32,6 @@ lab.experiment("Testing di stocazzo", function() {
 
 		server.inject(options, function(response) {
 			Code.expect(response.statusCode).to.equal(200);
-			Code.expect(JSON.parse(response.result).response).to.equal('STOCAZZO');
-			done();
-		});
-	});
-
-	lab.test("GET /caps/chi", function(done) {
-		var options = {
-			method: 'GET',
-			url: '/caps/chi'
-		};
-
-		server.inject(options, function(response) {
-			Code.expect(response.statusCode).to.equal(200);
-			Code.expect(JSON.parse(response.result).query).to.equal('chi?');
 			Code.expect(JSON.parse(response.result).response).to.equal('STOCAZZO');
 			done();
 		});
