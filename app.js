@@ -21,15 +21,10 @@ server.route({
 	method: 'GET',
 	path: '/caps',
 	handler: function(request, reply){
-		return reply(JSON.stringify({response: sc.toUpperCase()})).type('application/json');
-	}
-});
+		var r = {response: sc.toUpperCase()};
 
-server.route({
-	method: 'GET',
-	path: '/caps/{query}',
-	handler: function(request, reply){
-		return reply(JSON.stringify({query: encodeURIComponent(request.params.query) + '?', response: sc.toUpperCase()})).type('application/json');
+		r = Utils.requestFormatter(request, r);
+		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
 
@@ -37,7 +32,21 @@ server.route({
 	method: 'GET',
 	path: '/camel',
 	handler: function(request, reply){
-		return reply(JSON.stringify({response: 'StoCazzo'})).type('application/json');
+		var r = {response: "StoCazzo"};
+
+		r = Utils.requestFormatter(request, r);
+		return reply(JSON.stringify(r)).type('application/json');
+	}
+});
+
+server.route({
+	method: 'GET',
+	path: '/ascii',
+	handler: function(request, reply){
+		var r = {response: "8====D"};
+
+		r = Utils.requestFormatter(request, r);
+		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
 
