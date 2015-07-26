@@ -21,15 +21,10 @@ server.route({
 	method: 'GET',
 	path: '/caps',
 	handler: function(request, reply){
-		return reply(JSON.stringify({response: sc.toUpperCase()})).type('application/json');
-	}
-});
+		var r = {response: sc.toUpperCase()};
 
-server.route({
-	method: 'GET',
-	path: '/caps/{query}',
-	handler: function(request, reply){
-		return reply(JSON.stringify({query: encodeURIComponent(request.params.query) + '?', response: sc.toUpperCase()})).type('application/json');
+		r = Utils.requestFormatter(request, r);
+		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
 
