@@ -15,10 +15,18 @@ lab.experiment("Testing di stocazzo", function() {
 			Code.expect(JSON.parse(response.result).response).to.equal('stocazzo');
 			done();
 		});
+	});
 
-		// here goes the fail
+	lab.test("GET / with request body", function(done) {
+		var options = {
+			method: 'GET',
+			url: '/',
+			payload: {query: "chi è?"}
+		};
+
 		server.inject(options, function(response) {
 			Code.expect(response.statusCode).to.equal(200);
+			Code.expect(JSON.parse(response.result).query).to.equal('chi è?');
 			Code.expect(JSON.parse(response.result).response).to.equal('stocazzo');
 			done();
 		});
