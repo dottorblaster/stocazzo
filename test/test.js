@@ -48,7 +48,7 @@ lab.experiment("Testing di stocazzo", function() {
 	lab.test("GET /caps with request body", function(done) {
 		var options = {
 			method: 'GET',
-			url: '/',
+			url: '/caps',
 			payload: {query: "chi è?"}
 		};
 
