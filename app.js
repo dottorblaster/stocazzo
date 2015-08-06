@@ -12,7 +12,7 @@ server.route({
 	handler: function(request, reply){
 		var r = {response: sc};
 
-		r = Utils.requestFormatter(request, r);
+		Utils.requestFormatter(request, r).dilate(request, r, 'gran');
 		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
