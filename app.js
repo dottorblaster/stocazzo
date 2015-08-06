@@ -23,7 +23,7 @@ server.route({
 	handler: function(request, reply){
 		var r = {response: sc.toUpperCase()};
 
-		r = Utils.requestFormatter(request, r).dilate(request, r, 'GRAN');
+		Utils.requestFormatter(request, r).dilate(request, r, 'GRAN');
 		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
@@ -34,7 +34,7 @@ server.route({
 	handler: function(request, reply){
 		var r = {response: "StoCazzo"};
 
-		r = Utils.requestFormatter(request, r).dilate(request, r, 'Gran');
+		Utils.requestFormatter(request, r).dilate(request, r, 'Gran');
 		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
@@ -45,7 +45,7 @@ server.route({
 	handler: function(request, reply){
 		var r = {response: "8====D"};
 
-		r = Utils.requestFormatter(request, r);
+		Utils.requestFormatter(request, r).dilate(request, r, '===');
 		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
