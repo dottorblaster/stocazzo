@@ -34,7 +34,7 @@ server.route({
 	handler: function(request, reply){
 		var r = {response: "StoCazzo"};
 
-		r = Utils.requestFormatter(request, r);
+		r = Utils.requestFormatter(request, r)dilate(request, r, 'Gran');
 		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
