@@ -85,11 +85,20 @@ lab.experiment("Testing stocazzo's", function() {
 		});
 	});
 
-	lab.test("Utils requestFormatter()", function(done) {
+	lab.test("Utils requestFormatter() adding question mark", function(done) {
 		var testReq = {query: {q: "chi è"}},
 			testRes = {response: "stocazzo"};
 
-		testRes = Utils.requestFormatter(testReq, testRes);
+		Utils.requestFormatter(testReq, testRes);
+		Code.expect(testRes.query).to.equal('chi è?');
+		done();
+	});
+
+	lab.test("Utils requestFormatter(), no question mark added", function(done) {
+		var testReq = {query: {q: "chi è?"}},
+			testRes = {response: "stocazzo"};
+
+		Utils.requestFormatter(testReq, testRes);
 		Code.expect(testRes.query).to.equal('chi è?');
 		done();
 	});
