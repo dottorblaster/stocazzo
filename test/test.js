@@ -89,7 +89,7 @@ lab.experiment("Testing stocazzo's", function() {
 		var testReq = {query: {q: "chi è"}},
 			testRes = {response: "stocazzo"};
 
-		testRes = Utils.requestFormatter(testReq, testRes);
+		Utils.requestFormatter(testReq, testRes);
 		Code.expect(testRes.query).to.equal('chi è?');
 		done();
 	});
@@ -98,7 +98,7 @@ lab.experiment("Testing stocazzo's", function() {
 		var testReq = {query: {q: "chi è?"}},
 			testRes = {response: "stocazzo"};
 
-		testRes = Utils.requestFormatter(testReq, testRes);
+		Utils.requestFormatter(testReq, testRes);
 		Code.expect(testRes.query).to.equal('chi è?');
 		done();
 	});
