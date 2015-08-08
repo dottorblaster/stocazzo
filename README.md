@@ -51,6 +51,7 @@ Example with even more emphasis:
 
 ```sh
 $ http get stocazzo.io q==chi\? big==1
+
 HTTP/1.1 200 OK
 Connection: keep-alive
 Date: Sat, 08 Aug 2015 16:08:34 GMT
@@ -67,13 +68,69 @@ vary: accept-encoding
 ```
 
 ### /caps
-Will return a 'stocazzo', but caps. So, "STOCAZZO".
+Will return a "stocazzo", but caps. So, "STOCAZZO".
 
-### /:query
-Will return a JSON-form response with your query as a question and "stocazzo" as the answer.
+Optional parameters: q (a query), big (configures the response as a "STOGRANCAZZO");
 
-### /caps/:query
-Will return a JSON-form response with your query as a question and "stocazzo" as the answer. But caps-locked.
+#### Example
+Standard API call:
+
+```sh
+$ http get stocazzo.io/caps
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Aug 2015 16:03:08 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "response": "STOCAZZO"
+}
+```
+
+Example with a query:
+
+```sh
+$ http get stocazzo.io/caps q==chi\?
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Aug 2015 16:06:07 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "query": "chi?",
+    "response": "STOCAZZO"
+}
+```
+
+Example with even more emphasis:
+
+```sh
+$ http get stocazzo.io/caps q==chi\? big==1
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Aug 2015 16:08:34 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "query": "chi?",
+    "response": "STOGRANCAZZO"
+}
+```
 
 ### /camel
 Camelcase can always be useful. Will return a "StoCazzo".
