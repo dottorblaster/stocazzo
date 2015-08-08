@@ -5,7 +5,10 @@ A Node REST service to provide Stocazzo as an asset for your application.
 ### /
 Will return a "stocazzo".
 
-Optional parameters: q (a query), big (configures the response as a "stograncazzo");
+_Optional parameters_:
+
+1. **q** -- a query
+2. **big** -- configures the response as a "stograncazzo"
 
 #### Example
 Standard API call:
@@ -70,7 +73,10 @@ vary: accept-encoding
 ### /caps
 Will return a "stocazzo", but caps. So, "STOCAZZO".
 
-Optional parameters: q (a query), big (configures the response as a "STOGRANCAZZO");
+_Optional parameters_:
+
+1. **q** -- a query
+2. **big** -- configures the response as a "STOGRANCAZZO"
 
 #### Example
 Standard API call:
@@ -134,6 +140,71 @@ vary: accept-encoding
 
 ### /camel
 Camelcase can always be useful. Will return a "StoCazzo".
+
+_Optional parameters_:
+
+1. **q** -- a query
+2. **big** -- configures the response as a "StoGranCazzo"
+
+#### Example
+Standard API call:
+
+```sh
+$ http get stocazzo.io/camel
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Aug 2015 16:03:08 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "response": "StoCazzo"
+}
+```
+
+Example with a query:
+
+```sh
+$ http get stocazzo.io/camel q==chi\?
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Aug 2015 16:06:07 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "query": "chi?",
+    "response": "StoCazzo"
+}
+```
+
+Example with even more emphasis:
+
+```sh
+$ http get stocazzo.io/camel q==chi\? big==1
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Aug 2015 16:08:34 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "query": "chi?",
+    "response": "StoGranCazzo"
+}
+```
 
 ### /ascii
 You want a translation in your language and you don't like text or you want print it more nerdly? No problem, will return "8====D".
