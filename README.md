@@ -273,3 +273,72 @@ vary: accept-encoding
     "response": "8=======D"
 }
 ```
+
+### /undersocre
+You don't like camelCase and you prefer the underscore_notation? No problem, will return "sto_cazzo".
+
+_Optional parameters_:
+
+1. **q** - a query
+2. **big** - configures the response as a "sto_gran_cazzo"
+
+#### Example
+Standard API call:
+
+```sh
+$ http get stocazzo.io/underscore
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Aug 2015 16:03:08 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "response": "sto_cazzo"
+}
+```
+
+Example with a query:
+
+```sh
+$ http get stocazzo.io/underscore q==chi\?
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Aug 2015 16:06:07 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "query": "chi?",
+    "response": "sto_cazzo"
+}
+```
+
+Example with even more emphasis:
+
+```sh
+$ http get stocazzo.io/underscore q==chi\? big==1
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Aug 2015 16:08:34 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "query": "chi?",
+    "response": "sto_gran_cazzo"
+}
+```
+

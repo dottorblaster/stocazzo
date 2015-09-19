@@ -98,7 +98,7 @@ lab.experiment("Testing stocazzo's", function() {
 		});
 	});
 
-	lab.test("GET /ascii", function(done) {
+	lab.test("GET /underscore", function(done) {
 		var options = {
 			method: 'GET',
 			url: '/underscore'
@@ -111,7 +111,7 @@ lab.experiment("Testing stocazzo's", function() {
 		});
 	});
 
-	lab.test("GET /ascii", function(done) {
+	lab.test("GET /underscore", function(done) {
 		var options = {
 			method: 'GET',
 			url: '/underscore?big=1'
