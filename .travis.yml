@@ -4,5 +4,5 @@ node_js:
   - "0.11"
 
 install: npm install
-script: sudo npm test
+script: npm test
 
