@@ -85,19 +85,6 @@ lab.experiment("Testing stocazzo's", function() {
 		});
 	});
 
-	lab.test("GET /ascii", function(done) {
-		var options = {
-			method: 'GET',
-			url: '/ascii'
-		};
-
-		server.inject(options, function(response) {
-			Code.expect(response.statusCode).to.equal(200);
-			Code.expect(JSON.parse(response.result).response).to.equal('8====D');
-			done();
-		});
-	});
-
 	lab.test("GET /underscore", function(done) {
 		var options = {
 			method: 'GET',
