@@ -85,6 +85,32 @@ lab.experiment("Testing stocazzo's", function() {
 		});
 	});
 
+	lab.test("GET /underscore", function(done) {
+		var options = {
+			method: 'GET',
+			url: '/underscore'
+		};
+
+		server.inject(options, function(response) {
+			Code.expect(response.statusCode).to.equal(200);
+			Code.expect(JSON.parse(response.result).response).to.equal('sto_cazzo');
+			done();
+		});
+	});
+
+	lab.test("GET /underscore", function(done) {
+		var options = {
+			method: 'GET',
+			url: '/underscore?big=1'
+		};
+
+		server.inject(options, function(response) {
+			Code.expect(response.statusCode).to.equal(200);
+			Code.expect(JSON.parse(response.result).response).to.equal('sto_gran_cazzo');
+			done();
+		});
+	});
+
 	lab.test("Utils requestFormatter() adding question mark", function(done) {
 		var testReq = {query: {q: "chi è"}},
 			testRes = {response: "stocazzo"};

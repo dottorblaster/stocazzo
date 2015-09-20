@@ -50,6 +50,17 @@ server.route({
 	}
 });
 
+server.route({
+	method: 'GET',
+	path: '/underscore',
+	handler: function(request, reply){
+		var r = {response: "sto_cazzo"};
+
+		Utils.requestFormatter(request, r).dilate(request, r, '_gran');
+		return reply(JSON.stringify(r)).type('application/json');
+	}
+});
+
 server.start(function () {
 	console.log('A stocazzo provider is running at:', server.info.uri);
 });
