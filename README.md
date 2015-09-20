@@ -274,7 +274,7 @@ vary: accept-encoding
 }
 ```
 
-### /undersocre
+### /underscore
 You don't like camelCase and you prefer the underscore_notation? No problem, will return "sto_cazzo".
 
 _Optional parameters_:
