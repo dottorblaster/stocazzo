@@ -4,7 +4,10 @@ var Hapi = require('hapi'),
 	server = new Hapi.Server(),
 	sc = config.sc;
 
-server.connection({port: config.port});
+server.connection({
+	port: config.port,
+	routes: {cors: true}
+});
 
 server.route({
 	method: 'GET',
