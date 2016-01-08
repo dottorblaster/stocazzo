@@ -341,3 +341,71 @@ vary: accept-encoding
     "response": "sto_gran_cazzo"
 }
 ```
+
+### /sto-conte
+Tv series lover? This is the endpoint for you: it will return "Sto cazzo!". Heavily inspired by [Corrado Guzzanti character](https://www.youtube.com/watch?v=ivbyG6qcFqg) in the great Italian tv series ["Boris"](http://www.imdb.com/title/tt1020116/).
+
+_Optional parameters_:
+
+1. **q** - a query
+2. **big** - configures the response as a "Sto gran cazzo!"
+
+#### Example
+Standard API call:
+
+```sh
+$ http get stocazzo.io/sto-conte
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Jan 2016 09:03:08 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "response": "Sto cazzo!"
+}
+```
+
+Example with a query:
+
+```sh
+$ http get stocazzo.io/sto-conte q==chi\?
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Jan 2016 09:06:07 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "query": "chi?",
+    "response": "Sto cazzo!"
+}
+```
+
+Example with even more emphasis:
+
+```sh
+$ http get stocazzo.io/sto-conte q==chi\? big==1
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Jan 2016 09:08:34 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "query": "chi?",
+    "response": "Sto gran cazzo!"
+}
+```

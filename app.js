@@ -64,6 +64,17 @@ server.route({
 	}
 });
 
+server.route({
+	method: 'GET',
+	path: '/sto-conte',
+	handler: function(request, reply){
+		var r = {response: "Sto cazzo!"};
+
+		Utils.requestFormatter(request, r).dilate(request, r, ' gran');
+		return reply(JSON.stringify(r)).type('application/json');
+	}
+});
+
 server.start(function () {
 	console.log('A stocazzo provider is running at:', server.info.uri);
 });
