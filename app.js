@@ -75,8 +75,12 @@ server.route({
 	}
 });
 
-server.start(function () {
-	console.log('A stocazzo provider is running at:', server.info.uri);
+server.start(function (err) {
+	if (!err) {
+		console.log('A stocazzo provider is running at:', server.info.uri);
+	} else {
+		console.log('Startup failed with error: ', err);
+	}
 });
 
 exports.server = server;
