@@ -15,7 +15,7 @@ server.route({
 	handler: function(request, reply){
 		var r = {response: sc};
 
-		Utils.requestFormatter(request, r).dilate(request, r, 'gran');
+		Utils.requestFormatter(request, r).dilate(request, r, {1:'gran', 2:'grandissimo'});
 		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
@@ -26,7 +26,7 @@ server.route({
 	handler: function(request, reply){
 		var r = {response: sc.toUpperCase()};
 
-		Utils.requestFormatter(request, r).dilate(request, r, 'GRAN');
+		Utils.requestFormatter(request, r).dilate(request, r, {1:'GRAN', 2:'GRANDISSIMO'});
 		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
@@ -37,7 +37,7 @@ server.route({
 	handler: function(request, reply){
 		var r = {response: "StoCazzo"};
 
-		Utils.requestFormatter(request, r).dilate(request, r, 'Gran');
+		Utils.requestFormatter(request, r).dilate(request, r, {1:'Gran', 2:'Grandissimo'});
 		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
@@ -48,7 +48,7 @@ server.route({
 	handler: function(request, reply){
 		var r = {response: "8====D"};
 
-		Utils.requestFormatter(request, r).dilate(request, r, '===');
+		Utils.requestFormatter(request, r).dilate(request, r, {1:'===', 2:'====='});
 		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
