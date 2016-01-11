@@ -111,6 +111,32 @@ lab.experiment("Testing stocazzo's", function() {
 		});
 	});
 
+		lab.test("GET /sto-conte", function(done) {
+		var options = {
+			method: 'GET',
+			url: '/sto-conte'
+		};
+
+		server.inject(options, function(response) {
+			Code.expect(response.statusCode).to.equal(200);
+			Code.expect(JSON.parse(response.result).response).to.equal('Sto cazzo!');
+			done();
+		});
+	});
+
+	lab.test("GET /sto-conte", function(done) {
+		var options = {
+			method: 'GET',
+			url: '/sto-conte?big=1'
+		};
+
+		server.inject(options, function(response) {
+			Code.expect(response.statusCode).to.equal(200);
+			Code.expect(JSON.parse(response.result).response).to.equal('Sto gran cazzo!');
+			done();
+		});
+	});
+
 	lab.test("Utils requestFormatter() adding question mark", function(done) {
 		var testReq = {query: {q: "chi è"}},
 			testRes = {response: "stocazzo"};
