@@ -2,25 +2,29 @@ var config = {
 	sc: 'stocazzo',
 	port: 80,
 	routes: {
-		root: {
+		"root": {
 			value: "stocazzo",
 			big: "gran"
 		},
-		caps: {
+		"caps": {
 			value: "STOCAZZO",
 			big: "GRAN"
 		},
-		camel: {
+		"camel": {
 			value: "StoCazzo",
 			big: "Gran"
 		},
-		ascii: {
+		"ascii": {
 			value: "8====D",
 			big: "==="
 		},
-		underscore: {
+		"underscore": {
 			value: "sto_cazzo",
 			big: "_gran"
+		},
+		"sto-conte": {
+			value: "Sto cazzo!",
+			big: " gran"
 		}
 	}
 };
