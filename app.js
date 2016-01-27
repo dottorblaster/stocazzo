@@ -2,7 +2,8 @@ var Hapi = require('hapi'),
 	Utils = require('./lib/utils.js'),
 	config = require('./config.js'),
 	server = new Hapi.Server(),
-	sc = config.sc;
+	sc = config.sc,
+	sticazzi = config.routes;
 
 server.connection({
 	port: config.port,
@@ -11,66 +12,13 @@ server.connection({
 
 server.route({
 	method: 'GET',
-	path: '/',
+	path: '/{format?}',
 	handler: function(request, reply){
-		var r = {response: sc};
+		var shaltFallback = !request.params.format && !sticazzi[request.params.format],
+			obj = shaltFallback ? sticazzi.root : sticazzi[request.params.format],
+			r = {response: obj.value};
 
-		Utils.requestFormatter(request, r).dilate(request, r, 'gran');
-		return reply(JSON.stringify(r)).type('application/json');
-	}
-});
-
-server.route({
-	method: 'GET',
-	path: '/caps',
-	handler: function(request, reply){
-		var r = {response: sc.toUpperCase()};
-
-		Utils.requestFormatter(request, r).dilate(request, r, 'GRAN');
-		return reply(JSON.stringify(r)).type('application/json');
-	}
-});
-
-server.route({
-	method: 'GET',
-	path: '/camel',
-	handler: function(request, reply){
-		var r = {response: "StoCazzo"};
-
-		Utils.requestFormatter(request, r).dilate(request, r, 'Gran');
-		return reply(JSON.stringify(r)).type('application/json');
-	}
-});
-
-server.route({
-	method: 'GET',
-	path: '/ascii',
-	handler: function(request, reply){
-		var r = {response: "8====D"};
-
-		Utils.requestFormatter(request, r).dilate(request, r, '===');
-		return reply(JSON.stringify(r)).type('application/json');
-	}
-});
-
-server.route({
-	method: 'GET',
-	path: '/underscore',
-	handler: function(request, reply){
-		var r = {response: "sto_cazzo"};
-
-		Utils.requestFormatter(request, r).dilate(request, r, '_gran');
-		return reply(JSON.stringify(r)).type('application/json');
-	}
-});
-
-server.route({
-	method: 'GET',
-	path: '/sto-conte',
-	handler: function(request, reply){
-		var r = {response: "Sto cazzo!"};
-
-		Utils.requestFormatter(request, r).dilate(request, r, ' gran');
+		Utils.requestFormatter(request, r).dilate(request, r, obj.big);
 		return reply(JSON.stringify(r)).type('application/json');
 	}
 });
