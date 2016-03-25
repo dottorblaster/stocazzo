@@ -20,6 +20,12 @@ server.route({
 
 		Utils.requestFormatter(request, r).dilate(request, r, obj.big);
 		return reply(JSON.stringify(r)).type('application/json');
+	},
+	config: {
+		cache: {
+			expiresIn: 30 * 1000,
+			privacy: 'private'
+		}
 	}
 });
 
