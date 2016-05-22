@@ -14,7 +14,7 @@ server.route({
 	method: 'GET',
 	path: '/{format?}',
 	handler: function(request, reply){
-		var shaltFallback = !request.params.format && !sticazzi[request.params.format],
+		var shaltFallback = !(request.params.format && sticazzi[request.params.format]),
 			obj = shaltFallback ? sticazzi.root : sticazzi[request.params.format],
 			r = {response: obj.value};
 
