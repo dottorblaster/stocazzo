@@ -19,7 +19,9 @@ server.route({
 			r = {response: obj.value};
 
 		Utils.requestFormatter(request, r).dilate(request, r, obj.big);
-		return reply(JSON.stringify(r)).type('application/json');
+
+		var statusCode = (shaltFallback && request.params.format) ? 404 : 200;
+		return reply(JSON.stringify(r)).type('application/json').code(statusCode);
 	},
 	config: {
 		cache: {
