@@ -14,12 +14,14 @@ server.route({
 	method: 'GET',
 	path: '/{format?}',
 	handler: function(request, reply){
-		var shaltFallback = !request.params.format && !sticazzi[request.params.format],
+		var shaltFallback = !(request.params.format && sticazzi[request.params.format]),
 			obj = shaltFallback ? sticazzi.root : sticazzi[request.params.format],
 			r = {response: obj.value};
 
 		Utils.requestFormatter(request, r).dilate(request, r, obj.big);
-		return reply(JSON.stringify(r)).type('application/json');
+
+		var statusCode = (shaltFallback && request.params.format) ? 404 : 200;
+		return reply(JSON.stringify(r)).type('application/json').code(statusCode);
 	},
 	config: {
 		cache: {
