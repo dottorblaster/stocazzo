@@ -1,18 +1,17 @@
 const Lab = require("@hapi/lab");
 const { expect } = require("@hapi/code");
-const { requestFormatter } = require("../lib/utils");
-const { afterEach, beforeEach, describe, it } = exports.lab = Lab.script();
+const { afterEach, beforeEach, describe, it } = (exports.lab = Lab.script());
 const { init } = require("../lib/server");
 
 describe("Testing stocazzo's", () => {
   let server;
 
   beforeEach(async () => {
-      server = await init();
+    server = await init();
   });
 
   afterEach(async () => {
-      await server.stop();
+    await server.stop();
   });
 
   it("GET /", async () => {
@@ -102,9 +101,7 @@ describe("Testing stocazzo's", () => {
 
     const response = await server.inject(options);
     expect(response.statusCode).to.equal(200);
-    expect(response.result.response).to.equal(
-      "sto_gran_cazzo"
-    );
+    expect(response.result.response).to.equal("sto_gran_cazzo");
   });
 
   it("GET /sto-conte", async () => {
@@ -126,24 +123,6 @@ describe("Testing stocazzo's", () => {
 
     const response = await server.inject(options);
     expect(response.statusCode).to.equal(200);
-    expect(response.result.response).to.equal(
-      "Sto gran cazzo!"
-    );
-  });
-
-  it("Utils requestFormatter() adding question mark", async () => {
-    var testReq = { query: { q: "chi è" } },
-      testRes = { response: "stocazzo" };
-
-    requestFormatter(testReq, testRes);
-    expect(testRes.query).to.equal("chi è?");
-  });
-
-  it("Utils requestFormatter(), no question mark added", async () => {
-    var testReq = { query: { q: "chi è?" } },
-      testRes = { response: "stocazzo" };
-
-    requestFormatter(testReq, testRes);
-    expect(testRes.query).to.equal("chi è?");
+    expect(response.result.response).to.equal("Sto gran cazzo!");
   });
 });
