@@ -4,7 +4,7 @@
   "description": "Yet Another Cloud Antani",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/@hapi/lab/bin/lab -c"
+    "test": "./node_modules/@hapi/lab/bin/lab -c -v"
   },
   "repository": {
     "type": "git",
