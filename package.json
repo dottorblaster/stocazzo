@@ -4,7 +4,9 @@
   "description": "Yet Another Cloud Antani",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/@hapi/lab/bin/lab -c -v"
+    "test": "./node_modules/@hapi/lab/bin/lab -c -v",
+    "lint": "eslint *.js lib/*.js test/*.js",
+    "prettier": "prettier **/*.js --write"
   },
   "repository": {
     "type": "git",
