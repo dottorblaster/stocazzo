@@ -130,6 +130,6 @@ describe("Testing stocazzo's", () => {
     const {
       settings: { port }
     } = server;
-    expect(port).to.equal(Number(process.env.PORT) || 3000);
+    expect(port).to.equal(Number(process.env.PORT) || 3000); // eslint-disable-line no-undef
   });
 });
