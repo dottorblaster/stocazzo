@@ -125,4 +125,11 @@ describe("Testing stocazzo's", () => {
     expect(response.statusCode).to.equal(200);
     expect(response.result.response).to.equal("Sto gran cazzo!");
   });
+
+  it("configuration is set", async () => {
+    const {
+      settings: { port }
+    } = server;
+    expect(port).to.equal(Number(process.env.PORT) || 3000);
+  });
 });
