@@ -1,7 +1,7 @@
 const Lab = require("@hapi/lab");
 const { expect } = require("@hapi/code");
 const { describe, it } = (exports.lab = Lab.script());
-const { requestFormatter, dilate } = require("../lib/utils");
+const { requestFormatter, dilate, getPort } = require("../lib/utils");
 
 describe("Utils module", () => {
   it("Utils requestFormatter() adding question mark", () => {
@@ -34,5 +34,10 @@ describe("Utils module", () => {
 
     dilate(testReq, testRes, "gran");
     expect(testRes.response).to.equal("stocazzo");
+  });
+
+  it("getPort() should behave consistently", () => {
+    expect(getPort()).to.equal(3000);
+    expect(getPort(80)).to.equal(80);
   });
 });
