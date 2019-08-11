@@ -7,9 +7,9 @@ describe("server start", () => {
   it("simply start and stop the server", async () => {
     const server = await start();
     const {
-      settings: { host }
+      settings: { port }
     } = server;
-    expect(host).to.equal("localhost");
+    expect(port).to.equal(3000);
     await server.stop();
   });
 });
