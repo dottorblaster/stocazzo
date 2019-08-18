@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/dottorblaster/scaas",
   "dependencies": {
+    "@drblaster/pipe": "^1.0.0",
     "@hapi/hapi": "^18.3.2"
   },
   "devDependencies": {
