@@ -8,7 +8,7 @@ describe("Utils module", () => {
     const testReq = { query: { q: "chi è" } };
     const testRes = { response: "stocazzo" };
 
-    requestFormatter(testReq, testRes);
+    requestFormatter(testReq)(testRes);
     expect(testRes.query).to.equal("chi è?");
   });
 
@@ -16,7 +16,7 @@ describe("Utils module", () => {
     const testReq = { query: { q: "chi è?" } };
     const testRes = { response: "stocazzo" };
 
-    requestFormatter(testReq, testRes);
+    requestFormatter(testReq)(testRes);
     expect(testRes.query).to.equal("chi è?");
   });
 
@@ -24,7 +24,7 @@ describe("Utils module", () => {
     const testReq = { query: { q: "chi è?", big: 1 } };
     const testRes = { response: "stocazzo" };
 
-    dilate(testReq, testRes, "gran");
+    dilate(testReq)("gran")(testRes);
     expect(testRes.response).to.equal("stograncazzo");
   });
 
@@ -32,7 +32,7 @@ describe("Utils module", () => {
     const testReq = { query: { q: "chi è?", big: 2 } };
     const testRes = { response: "stocazzo" };
 
-    dilate(testReq, testRes, "gran");
+    dilate(testReq)("gran")(testRes);
     expect(testRes.response).to.equal("stocazzo");
   });
 
