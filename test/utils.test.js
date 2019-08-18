@@ -10,6 +10,7 @@ describe("Utils module", () => {
 
     requestFormatter(testReq)(testRes);
     expect(testRes.query).to.equal("chi è?");
+    expect(requestFormatter(testReq)(testRes).query).to.equal("chi è?");
   });
 
   it("Utils requestFormatter(), no question mark added", () => {
@@ -34,6 +35,7 @@ describe("Utils module", () => {
 
     dilate(testReq)("gran")(testRes);
     expect(testRes.response).to.equal("stocazzo");
+    expect(dilate(testReq)("gran")(testRes).response).to.equal("stocazzo");
   });
 
   it("getPort() should behave consistently", () => {
