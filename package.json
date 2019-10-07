@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@hapi/code": "^6.0.0",
-    "@hapi/lab": "^20.3.2",
+    "@hapi/lab": "^20.4.0",
     "eslint": "^6.5.1",
     "prettier": "1.18.2"
   }
