@@ -29,6 +29,6 @@
     "@hapi/code": "^7.0.0",
     "@hapi/lab": "^21.0.0",
     "eslint": "^6.6.0",
-    "prettier": "1.18.2"
+    "prettier": "1.19.1"
   }
 }
