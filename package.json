@@ -4,9 +4,10 @@
   "description": "Yet Another Cloud Antani",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/@hapi/lab/bin/lab -c -v",
+    "test": "jest",
     "lint": "eslint *.js lib/*.js test/*.js",
-    "prettier": "prettier **/*.js --write"
+    "prettier": "prettier **/*.js --write",
+    "dev": "ts-node --files ./index.ts"
   },
   "repository": {
     "type": "git",
@@ -23,12 +24,16 @@
   "homepage": "https://github.com/dottorblaster/scaas",
   "dependencies": {
     "@drblaster/pipe": "^1.0.1",
-    "@hapi/hapi": "^19.1.1"
+    "fastify": "^2.15.0",
+    "fastify-cors": "^3.0.3",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
   },
   "devDependencies": {
-    "@hapi/code": "^8.0.1",
-    "@hapi/lab": "^22.0.4",
+    "@types/jest": "^26.0.3",
     "eslint": "^7.3.1",
-    "prettier": "2.0.5"
+    "jest": "^26.1.0",
+    "prettier": "2.0.5",
+    "ts-jest": "^26.1.1"
   }
 }
