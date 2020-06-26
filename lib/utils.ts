@@ -24,5 +24,10 @@ export const dilate = req => s => res => {
     : { ...res };
 };
 
-export const getPort = (envPort: Port = 3000) =>
-  typeof envPort === 'string' ? Number(envPort) : envPort;
+export const parsePort = (envPort: Port = 3000) => {
+  const port = typeof envPort === 'string' ? Number(envPort) : envPort;
+  if (Number.isInteger(port) && port >= 1 && port <= 65535) {
+    return port;
+  }
+  throw new Error('please provide a valid port number');
+};

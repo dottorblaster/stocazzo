@@ -1,7 +1,7 @@
 import fastify from 'fastify';
 import cors from 'fastify-cors';
 import { pipe } from '@drblaster/pipe';
-import { requestFormatter, dilate, getPort } from './utils';
+import { requestFormatter, dilate, parsePort } from './utils';
 import config from './config';
 
 const sticazzi = config.routes;
@@ -31,7 +31,7 @@ export const init = async () => {
 };
 
 export const start = async () => {
-  const url = await server.listen(getPort(process.env.PORT));
+  const url = await server.listen(parsePort(process.env.PORT));
   console.log(`A stocazzo provider is running at: ${url}`);
   return server;
 };

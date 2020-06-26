@@ -1,4 +1,4 @@
-import { requestFormatter, dilate, getPort } from '../lib/utils';
+import { requestFormatter, dilate, parsePort } from '../lib/utils';
 
 describe('Utils module', () => {
   it('Utils requestFormatter() adding question mark', () => {
@@ -34,7 +34,7 @@ describe('Utils module', () => {
   });
 
   it('getPort() should behave consistently', () => {
-    expect(getPort()).toBe(3000);
-    expect(getPort(80)).toBe(80);
+    expect(parsePort()).toBe(3000);
+    expect(parsePort(80)).toBe(80);
   });
 });
