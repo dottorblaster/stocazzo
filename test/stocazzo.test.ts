@@ -8,7 +8,7 @@ describe("Testing stocazzo's", () => {
   });
 
   it('GET /', async () => {
-    var options = {
+    const options = {
       method: 'GET',
       url: '/',
     };
@@ -19,7 +19,7 @@ describe("Testing stocazzo's", () => {
   });
 
   it('GET / with request body', async () => {
-    var options = {
+    const options = {
       method: 'GET',
       url: '/?q=chi%20e',
     };
@@ -31,7 +31,7 @@ describe("Testing stocazzo's", () => {
   });
 
   it('GET /caps', async () => {
-    var options = {
+    const options = {
       method: 'GET',
       url: '/caps',
     };
@@ -42,7 +42,7 @@ describe("Testing stocazzo's", () => {
   });
 
   it('GET /caps with request body', async () => {
-    var options = {
+    const options = {
       method: 'GET',
       url: '/caps?q=chi%20e',
     };
@@ -54,7 +54,7 @@ describe("Testing stocazzo's", () => {
   });
 
   it('GET /camel', async () => {
-    var options = {
+    const options = {
       method: 'GET',
       url: '/camel',
     };
@@ -65,7 +65,7 @@ describe("Testing stocazzo's", () => {
   });
 
   it('GET /ascii', async () => {
-    var options = {
+    const options = {
       method: 'GET',
       url: '/ascii',
     };
@@ -76,7 +76,7 @@ describe("Testing stocazzo's", () => {
   });
 
   it('GET /underscore', async () => {
-    var options = {
+    const options = {
       method: 'GET',
       url: '/underscore',
     };
@@ -87,7 +87,7 @@ describe("Testing stocazzo's", () => {
   });
 
   it('GET /underscore with big=true', async () => {
-    var options = {
+    const options = {
       method: 'GET',
       url: '/underscore?big=1',
     };
@@ -98,7 +98,7 @@ describe("Testing stocazzo's", () => {
   });
 
   it('GET /sto-conte', async () => {
-    var options = {
+    const options = {
       method: 'GET',
       url: '/sto-conte',
     };
@@ -109,7 +109,7 @@ describe("Testing stocazzo's", () => {
   });
 
   it('GET /sto-conte with big=true', async () => {
-    var options = {
+    const options = {
       method: 'GET',
       url: '/sto-conte?big=1',
     };

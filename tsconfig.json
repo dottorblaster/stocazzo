@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "lib": ["es2016"],
     "paths": {
-      "*": ["src/*"]
+      "*": ["*"]
     },
     "allowJs": true,
     "target": "es2016",
@@ -13,6 +13,6 @@
     "outDir": "./dist",
     "esModuleInterop": true
   },
-  "include": ["./src/**/*.ts"],
+  "include": ["**/*.ts"],
   "exclude": ["node_modules"]
 }
