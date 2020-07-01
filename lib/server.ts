@@ -31,7 +31,7 @@ export const init = async () => {
 };
 
 export const start = async () => {
-  const url = await server.listen(parsePort(process.env.PORT));
+  const url = await server.listen(parsePort(process.env.PORT), '0.0.0.0');
   console.log(`A stocazzo provider is running at: ${url}`);
   return server;
 };
