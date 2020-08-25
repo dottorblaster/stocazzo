@@ -1,4 +1,4 @@
-import { StocazzoRequest, StocazzoResponse } from "./types";
+import { StocazzoRequest, StocazzoResponse } from './types';
 
 type Port = string | number;
 
@@ -7,8 +7,8 @@ export const requestFormatter = (req: StocazzoRequest) => (
 ): StocazzoResponse => {
   if (req.query.q) {
     res.query = req.query.q;
-    if (res.query.slice(-1) != "?") {
-      res.query = res.query + "?";
+    if (res.query.slice(-1) != '?') {
+      res.query = res.query + '?';
     }
   }
   return { ...res };
@@ -31,9 +31,9 @@ export const dilate = (req: StocazzoRequest) => (s: string) => (
 };
 
 export const parsePort = (envPort: Port = 3000): number => {
-  const port = typeof envPort === "string" ? Number(envPort) : envPort;
+  const port = typeof envPort === 'string' ? Number(envPort) : envPort;
   if (Number.isInteger(port) && port >= 1 && port <= 65535) {
     return port;
   }
-  throw new Error("please provide a valid port number");
+  throw new Error('please provide a valid port number');
 };

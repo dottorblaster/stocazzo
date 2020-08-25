@@ -1,10 +1,10 @@
-import fastify, { FastifyInstance } from "fastify";
-import cors from "fastify-cors";
-import { pipe } from "@drblaster/pipe";
+import fastify, { FastifyInstance } from 'fastify';
+import cors from 'fastify-cors';
+import { pipe } from '@drblaster/pipe';
 
-import { requestFormatter, dilate, parsePort } from "./utils";
-import config from "./config";
-import { StocazzoRequest, StocazzoResponse } from "./types";
+import { requestFormatter, dilate, parsePort } from './utils';
+import config from './config';
+import { StocazzoRequest, StocazzoResponse } from './types';
 
 const sticazzi = config.routes;
 
@@ -12,7 +12,7 @@ const server = fastify();
 
 server.register(cors);
 
-server.get("/:format", (request: StocazzoRequest, reply) => {
+server.get('/:format', (request: StocazzoRequest, reply) => {
   const {
     params: { format },
   } = request;
@@ -34,7 +34,7 @@ export const init = async (): Promise<FastifyInstance> => {
 };
 
 export const start = async (): Promise<FastifyInstance> => {
-  const url = await server.listen(parsePort(process.env.PORT), "0.0.0.0");
+  const url = await server.listen(parsePort(process.env.PORT), '0.0.0.0');
   console.log(`A stocazzo provider is running at: ${url}`);
   return server;
 };
