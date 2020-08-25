@@ -1,7 +1,28 @@
-import { RequestGenericInterface } from "fastify";
+import { FastifyRequest } from "fastify";
 
-export interface StocazzoRequest extends RequestGenericInterface {
-  Params: {
+type StocazzoRequestContent = {
+  params?: {
     format: string;
   };
+  query?: {
+    big?: number;
+    q: string;
+  };
+};
+
+export type StocazzoRequest =
+  | StocazzoRequestContent
+  | FastifyRequest<{
+      Params: {
+        format: string;
+      };
+      Querystring: {
+        big: number;
+        q: string;
+      };
+    }>;
+
+export interface StocazzoResponse {
+  response: string;
+  query?: string;
 }
