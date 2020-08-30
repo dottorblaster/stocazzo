@@ -2,7 +2,6 @@
   "name": "stocazzo-as-a-service",
   "version": "2.0.0",
   "description": "Yet Another Cloud Antani",
-  "main": "app.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint *.ts lib/*.ts test/*.ts",

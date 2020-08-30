@@ -1,4 +1,4 @@
-import fastify, { FastifyInstance } from 'fastify';
+import fastify, { FastifyInstance, FastifyReply } from 'fastify';
 import cors from 'fastify-cors';
 import { pipe } from '@drblaster/pipe';
 
@@ -12,7 +12,7 @@ const server = fastify();
 
 server.register(cors);
 
-server.get('/:format', (request: StocazzoRequest, reply) => {
+server.get('/:format', (request: StocazzoRequest, reply: FastifyReply) => {
   const {
     params: { format },
   } = request;
