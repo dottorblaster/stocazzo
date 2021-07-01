@@ -274,8 +274,8 @@ vary: accept-encoding
 }
 ```
 
-### /underscore
-You don't like camelCase and you prefer the underscore_notation? No problem, will return "sto_cazzo".
+### /snake
+You don't like camelCase and you prefer the snake_case notation? No problem, will return "sto_cazzo".
 
 _Optional parameters_:
 
@@ -286,7 +286,7 @@ _Optional parameters_:
 Standard API call:
 
 ```sh
-$ http get stocazzo.io/underscore
+$ http get stocazzo.io/snake
 
 HTTP/1.1 200 OK
 Connection: keep-alive
@@ -305,7 +305,7 @@ vary: accept-encoding
 Example with a query:
 
 ```sh
-$ http get stocazzo.io/underscore q==chi\?
+$ http get stocazzo.io/snake q==chi\?
 
 HTTP/1.1 200 OK
 Connection: keep-alive
@@ -325,7 +325,7 @@ vary: accept-encoding
 Example with even more emphasis:
 
 ```sh
-$ http get stocazzo.io/underscore q==chi\? big==1
+$ http get stocazzo.io/snake q==chi\? big==1
 
 HTTP/1.1 200 OK
 Connection: keep-alive
