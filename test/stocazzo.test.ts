@@ -75,10 +75,10 @@ describe("Testing stocazzo's", () => {
     expect(response.json().response).toBe('8====D');
   });
 
-  it('GET /underscore', async () => {
+  it('GET /snake', async () => {
     const options = {
       method: 'GET',
-      url: '/underscore',
+      url: '/snake',
     };
 
     const response = await server.inject(options);
@@ -86,10 +86,10 @@ describe("Testing stocazzo's", () => {
     expect(response.json().response).toBe('sto_cazzo');
   });
 
-  it('GET /underscore with big=true', async () => {
+  it('GET /snake with big=true', async () => {
     const options = {
       method: 'GET',
-      url: '/underscore?big=1',
+      url: '/snake?big=1',
     };
 
     const response = await server.inject(options);

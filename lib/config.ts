@@ -17,7 +17,7 @@ export default {
       value: '8====D',
       big: '===',
     },
-    underscore: {
+    snake: {
       value: 'sto_cazzo',
       big: '_gran',
     },
