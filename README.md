@@ -409,3 +409,72 @@ vary: accept-encoding
     "response": "Sto gran cazzo!"
 }
 ```
+
+### /varg
+A gothic `stocazzo` version, reminiscing the classic black metal logos.
+
+_Optional parameters_:
+
+1. **q** - a query
+2. **big** - even bolder
+
+
+#### Example
+Standard API call:
+
+```sh
+$ http get stocazzo.io/varg
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Jan 2016 09:03:08 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "response": "𝔖𝔗𝔒ℭ𝔄ℨℨ𝔒"
+}
+```
+
+Example with a query:
+
+```sh
+$ http get stocazzo.io/varg q==chi\?
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Jan 2016 09:06:07 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "query": "chi?",
+    "response": "𝔖𝔗𝔒ℭ𝔄ℨℨ𝔒"
+}
+```
+
+Example with even more emphasis:
+
+```sh
+$ http get stocazzo.io/varg q==chi\? big==1
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Date: Sat, 08 Jan 2016 09:08:34 GMT
+Transfer-Encoding: chunked
+cache-control: no-cache
+content-encoding: gzip
+content-type: application/json; charset=utf-8
+vary: accept-encoding
+
+{
+    "query": "chi?",
+    "response": "𝕾𝕿𝕺𝕮𝕬𝖅𝖅𝕺"
+}
+```
