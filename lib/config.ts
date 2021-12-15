@@ -25,5 +25,9 @@ export default {
       value: 'Sto cazzo!',
       big: ' gran',
     },
+    varg: {
+      value: '𝔖𝔗𝔒ℭ𝔄ℨℨ𝔒',
+      big: '𝕾𝕿𝕺𝕮𝕬𝖅𝖅𝕺',
+    },
   },
 };
