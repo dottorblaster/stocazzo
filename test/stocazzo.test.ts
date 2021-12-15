@@ -118,4 +118,26 @@ describe("Testing stocazzo's", () => {
     expect(response.statusCode).toBe(200);
     expect(response.json().response).toBe('Sto gran cazzo!');
   });
+
+  it('GET /varg', async () => {
+    const options = {
+      method: 'GET',
+      url: '/varg',
+    };
+
+    const response = await server.inject(options);
+    expect(response.statusCode).toBe(200);
+    expect(response.json().response).toBe('𝔖𝔗𝔒ℭ𝔄ℨℨ𝔒');
+  });
+
+  it('GET /varg with big enabled', async () => {
+    const options = {
+      method: 'GET',
+      url: '/varg?big=1',
+    };
+
+    const response = await server.inject(options);
+    expect(response.statusCode).toBe(200);
+    expect(response.json().response).toBe('𝔖𝔗𝔒𝕲𝕽𝕬𝕹ℭ𝔄ℨℨ𝔒');
+  });
 });
