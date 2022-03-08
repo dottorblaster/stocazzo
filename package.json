@@ -24,7 +24,7 @@
   "homepage": "https://github.com/dottorblaster/stocazzo",
   "dependencies": {
     "@drblaster/pipe": "^1.0.1",
-    "fastify": "^3.27.2",
+    "fastify": "^3.27.3",
     "fastify-cors": "^6.0.3",
     "runes": "^0.4.3",
     "ts-node": "^10.7.0"
