@@ -1,5 +1,5 @@
 import fastify, { FastifyInstance, FastifyReply } from 'fastify';
-import cors from 'fastify-cors';
+import cors from '@fastify/cors';
 import { pipe } from '@drblaster/pipe';
 
 import { requestFormatter, dilate, parsePort } from './utils';
