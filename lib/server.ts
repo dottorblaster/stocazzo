@@ -22,7 +22,7 @@ server.get('/:format', (request: StocazzoRequest, reply: FastifyReply) => {
 
   const processedResponse: StocazzoResponse = pipe(
     requestFormatter(request),
-    dilate(request)(obj.big)
+    dilate(request)(obj.big),
   )(response);
 
   reply.send(processedResponse);

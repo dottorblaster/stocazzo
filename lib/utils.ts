@@ -27,7 +27,7 @@ export const dilate =
           response: `${substr(response, 0, 3)}${s}${substr(
             response,
             3,
-            response.length - 1
+            response.length - 1,
           )}`,
         }
       : { ...res };
