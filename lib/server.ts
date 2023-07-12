@@ -34,7 +34,10 @@ export const init = async (): Promise<FastifyInstance> => {
 };
 
 export const start = async (): Promise<FastifyInstance> => {
-  const url = await server.listen(parsePort(process.env.PORT), '0.0.0.0');
+  const url = await server.listen({
+    port: parsePort(process.env.PORT),
+    host: '0.0.0.0',
+  });
   console.log(`A stocazzo provider is running at: ${url}`);
   return server;
 };
