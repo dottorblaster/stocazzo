@@ -1,4 +1,4 @@
-FROM node:16
+FROM registry.suse.com/bci/nodejs:18
 
 ENV PORT=8080
 
