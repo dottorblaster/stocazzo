@@ -27,7 +27,7 @@
     "@fastify/cors": "^8.4.2",
     "fastify": "^4.24.3",
     "runes": "^0.4.3",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.10",
