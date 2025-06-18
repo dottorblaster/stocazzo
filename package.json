@@ -30,11 +30,11 @@
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.14",
+    "@types/jest": "^30.0.0",
     "@typescript-eslint/eslint-plugin": "^8.34.0",
     "@typescript-eslint/parser": "^8.34.1",
     "eslint": "^9.28.0",
-    "jest": "^29.7.0",
+    "jest": "^30.0.0",
     "prettier": "3.5.3",
     "ts-jest": "^29.4.0",
     "typescript": "^5.8.3"
