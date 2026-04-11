@@ -8,7 +8,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "esModuleInterop": true,
-    "types": ["jest", "node"]
+    "types": ["jest", "node", "runes"]
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]
