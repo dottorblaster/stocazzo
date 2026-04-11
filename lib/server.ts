@@ -6,16 +6,16 @@ import { requestFormatter, dilate, parsePort } from './utils';
 import config from './config';
 import { StocazzoRequest, StocazzoResponse } from './types';
 
-const sticazzi = config.routes;
+const sticazzi: Record<string, { value: string; big: string }> = config.routes;
 
 const server = fastify();
 
 server.register(cors);
 
-server.get('/:format', (request: StocazzoRequest, reply: FastifyReply) => {
-  const {
-    params: { format },
-  } = request;
+server.get<StocazzoRequest>(
+  '/:format',
+  (request, reply: FastifyReply) => {
+  const { format } = request.params;
   const fallback = !(format && sticazzi[format]);
   const obj = fallback ? sticazzi.root : sticazzi[format];
   const response = { response: obj.value };

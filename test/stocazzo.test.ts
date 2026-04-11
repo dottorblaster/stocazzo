@@ -1,7 +1,8 @@
+import { FastifyInstance } from 'fastify';
 import { init } from '../lib/server';
 
 describe("Testing stocazzo's", () => {
-  let server;
+  let server: FastifyInstance;
 
   beforeEach(async () => {
     server = await init();
@@ -9,7 +10,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET /', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/',
     };
 
@@ -20,7 +21,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET / with request body', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/?q=chi%20e',
     };
 
@@ -32,7 +33,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET /caps', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/caps',
     };
 
@@ -43,7 +44,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET /caps with request body', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/caps?q=chi%20e',
     };
 
@@ -55,7 +56,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET /camel', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/camel',
     };
 
@@ -66,7 +67,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET /ascii', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/ascii',
     };
 
@@ -77,7 +78,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET /snake', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/snake',
     };
 
@@ -88,7 +89,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET /snake with big=true', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/snake?big=1',
     };
 
@@ -99,7 +100,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET /sto-conte', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/sto-conte',
     };
 
@@ -110,7 +111,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET /sto-conte with big=true', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/sto-conte?big=1',
     };
 
@@ -121,7 +122,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET /varg', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/varg',
     };
 
@@ -132,7 +133,7 @@ describe("Testing stocazzo's", () => {
 
   it('GET /varg with big enabled', async () => {
     const options = {
-      method: 'GET',
+      method: 'GET' as const,
       url: '/varg?big=1',
     };
 
