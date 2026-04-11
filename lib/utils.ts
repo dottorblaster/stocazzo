@@ -1,10 +1,10 @@
 import { substr } from 'runes';
-import { StocazzoRequest, StocazzoResponse } from './types';
+import { StocazzoRequestContent, StocazzoResponse } from './types';
 
 type Port = string | number;
 
 export const requestFormatter =
-  (req: StocazzoRequest) =>
+  (req: StocazzoRequestContent) =>
   (res: StocazzoResponse): StocazzoResponse => {
     if (req.query.q) {
       res.query = req.query.q;
@@ -16,7 +16,7 @@ export const requestFormatter =
   };
 
 export const dilate =
-  (req: StocazzoRequest) =>
+  (req: StocazzoRequestContent) =>
   (s: string) =>
   (res: StocazzoResponse): StocazzoResponse => {
     const { response } = res;
