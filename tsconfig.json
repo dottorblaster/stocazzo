@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "lib": ["es2018", "DOM"],
-    "paths": {
-      "*": ["*"]
-    },
     "allowJs": true,
-    "target": "es2016",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "target": "es2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "sourceMap": true,
     "outDir": "./dist",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["jest", "node"]
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]
