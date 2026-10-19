@@ -34,7 +34,7 @@
     "@types/runes": "^0.4.3",
     "@typescript-eslint/eslint-plugin": "^8.71.2",
     "@typescript-eslint/parser": "^8.71.2",
-    "eslint": "^10.11.0",
+    "eslint": "^10.12.0",
     "jest": "^30.5.2",
     "prettier": "3.9.10",
     "ts-jest": "^29.4.15",
